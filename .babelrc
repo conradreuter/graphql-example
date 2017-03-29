@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    ["inline-import", { "extensions": [".gql"] } ],
+    "inline-json-import"
+  ],
+  "presets": [
+    "es2015",
+    "es2016"
+  ]
+}

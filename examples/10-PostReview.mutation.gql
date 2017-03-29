@@ -1,0 +1,18 @@
+mutation PostReview {
+  postReview(
+    articleId: "2",
+    review: {
+      rating: 3
+      text: "meh"
+    }
+  ) {
+    id
+    name
+    rating
+    reviews {
+      id
+      text
+      rating
+    }
+  }
+}

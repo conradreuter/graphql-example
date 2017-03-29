@@ -1,0 +1,11 @@
+# An article that can be viewed and ordered.
+type Article {
+  # A text describing the details of the article.
+  description: String
+
+  # The ID of the article.
+  id: ID!
+
+  # The name of the article.
+  name: String!
+}

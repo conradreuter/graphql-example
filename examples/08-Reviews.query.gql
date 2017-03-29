@@ -1,0 +1,14 @@
+query Reviews {
+  article(articleId: "5") {
+    id
+    name
+    rating
+    reviews {
+      id
+      author
+      date
+      rating
+      text
+    }
+  }
+}

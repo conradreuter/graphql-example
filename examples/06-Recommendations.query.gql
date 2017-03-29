@@ -1,0 +1,10 @@
+query Recommendations {
+  article(articleId: "1") {
+    id
+    name
+    recommendations {
+      id
+      name
+    }
+  }
+}

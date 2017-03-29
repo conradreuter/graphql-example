@@ -1,0 +1,69 @@
+schema {
+  query: QueryRoot
+}
+
+# An article that can be viewed and ordered.
+type Article {
+  # The category this article belongs to.
+  category: Category!
+
+  # A text describing the details of the article.
+  description: String
+
+  # The ID of the article.
+  id: ID!
+
+  # The name of the article.
+  name: String!
+
+  # The average rating of this article.
+  rating: Float
+
+  # Articles recommended to buy along with this one.
+  recommendations: [Article]
+
+  # The reviews posted for this article.
+  reviews: [Review]
+}
+
+# A category that groups multiple articles.
+enum Category {
+  # Physical books.
+  BOOKS
+
+  # Electronic devices.
+  DEVICES
+}
+
+# A catalog containing articles.
+type QueryRoot {
+  # Finds a specific article listed in the catalog.
+  article(
+    # The ID of the article.
+    articleId: ID!
+  ): Article
+
+  # Lists all available articles in the catalog.
+  articles(
+    # The category to list articles from. Can be omitted to not filter by category.
+    category: Category
+  ): [Article]
+}
+
+# A review posted for an article.
+type Review {
+  # The author of the review.
+  author: String
+
+  # The ISO 8601 date when the review has been posted.
+  date: String
+
+  # The ID of the review.
+  id: ID!
+
+  # The rating behind this review.
+  rating: Int!
+
+  # The review text.
+  text: String
+}

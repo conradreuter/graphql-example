@@ -1,0 +1,7 @@
+query Books {
+  articles(category: BOOKS) {
+    id
+    name
+    category
+  }
+}

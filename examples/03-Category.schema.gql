@@ -1,0 +1,42 @@
+schema {
+  query: QueryRoot
+}
+
+# An article that can be viewed and ordered.
+type Article {
+  # The category this article belongs to.
+  category: Category!
+
+  # A text describing the details of the article.
+  description: String
+
+  # The ID of the article.
+  id: ID!
+
+  # The name of the article.
+  name: String!
+}
+
+# A category that groups multiple articles.
+enum Category {
+  # Physical books.
+  BOOKS
+
+  # Electronic devices.
+  DEVICES
+}
+
+# A catalog containing articles.
+type QueryRoot {
+  # Finds a specific article listed in the catalog.
+  article(
+    # The ID of the article.
+    articleId: ID!
+  ): Article
+
+  # Lists all available articles in the catalog.
+  articles(
+    # The category to list articles from. Can be omitted to not filter by category.
+    category: Category
+  ): [Article]
+}

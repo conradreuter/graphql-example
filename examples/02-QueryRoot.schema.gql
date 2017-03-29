@@ -1,0 +1,27 @@
+schema {
+  query: QueryRoot
+}
+
+# An article that can be viewed and ordered.
+type Article {
+  # A text describing the details of the article.
+  description: String
+
+  # The ID of the article.
+  id: ID!
+
+  # The name of the article.
+  name: String!
+}
+
+# A catalog containing articles.
+type QueryRoot {
+  # Finds a specific article listed in the catalog.
+  article(
+    # The ID of the article.
+    articleId: ID!
+  ): Article
+
+  # Lists all available articles in the catalog.
+  articles: [Article]
+}
