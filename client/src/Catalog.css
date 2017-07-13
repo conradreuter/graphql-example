@@ -1,0 +1,8 @@
+.root {
+  height: 100%;
+}
+
+.content {
+  height: 100%;
+  padding: 2em 3em;
+}

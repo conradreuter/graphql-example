@@ -1,0 +1,8 @@
+query articles {
+  articles {
+    id
+    image
+    name
+    rating
+  }
+}
